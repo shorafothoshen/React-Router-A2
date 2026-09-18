@@ -23,7 +23,7 @@ This was built as part of an assignment, so it's kept fairly simple on purpose â
 Clone the repo and install dependencies:
 
 ```bash
-git clone <https://github.com/shorafothoshen/React-Router-A2>
+git clone https://github.com/shorafothoshen/React-Router-A2
 cd movie-explorer
 npm install
 ```
