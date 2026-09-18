@@ -1,13 +1,9 @@
-// src/components/Hero.jsx
 import { Link } from "react-router";
 
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden bg-[#0b0e14]"
-      aria-label="Hero"
-    >
-      {/* Gradient / glow background instead of a heavy image */}
+      className="relative overflow-hidden bg-[#0b0e14]">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-orange-500/10 via-transparent to-transparent" />
       <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-orange-500/20 blur-3xl" />
 

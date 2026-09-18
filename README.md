@@ -1,16 +1,52 @@
-# React + Vite
+# 🎬 Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple movie/show explorer built with React, React Router and Tailwind CSS. You can browse shows, search for a title, and click into a modal to see more details — rating, genre, release year, overview, all that. Data comes from the [API](https://www.tvmaze.com/api), which is free and doesn't need an API key.
 
-Currently, two official plugins are available:
+This was built as part of an assignment, so it's kept fairly simple on purpose — no state management library, no TypeScript, just plain React with hooks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Link
 
-## React Compiler
+🔗 [https://movie-explorer-silk-nine.vercel.app/]
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Screenshots
 
-## Expanding the ESLint configuration
+*(add a screenshot or two of the home page and the movie grid here)*
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **React** – UI
+- **React Router v7** – routing (`/` for home, `/movies` for the listing page)
+- **Tailwind CSS** – styling, no custom CSS files
+
+## Getting Started
+
+Clone the repo and install dependencies:
+
+```bash
+git clone <https://github.com/shorafothoshen/React-Router-A2>
+cd movie-explorer
+npm install
+```
+
+Run the dev server:
+
+```bash
+npm run dev
+```
+
+Then open whatever URL Vite prints (usually `http://localhost:5173`).
+
+Routing happens once, at the top level, in `App.jsx`. Every page renders inside `MainLayout`, so the navbar doesn't need to be re-imported into every page — it's already there.
+
+## Features
+
+- Home page with a hero section and a CTA button into the listing page
+- Search bar that filters shows by title (debounced, so it's not firing a request on every keystroke)
+- Responsive grid — 1 column on mobile, up to 4 columns on bigger screens
+- Details modal — closes on the ✕ button, the Close button, clicking outside, or pressing Escape
+
+## Known limitations
+
+- TVMaze is mostly TV shows, not movies, so results won't always be "movies" in the strictest sense — but the API and data shape is what the assignment asked us to work with.
+- No pagination — `/shows` returns a decent chunk of data on its own, which is enough for this assignment.
+- No loading skeletons, just a plain "Loading..." text.
